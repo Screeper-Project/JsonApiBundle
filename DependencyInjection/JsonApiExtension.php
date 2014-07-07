@@ -1,6 +1,6 @@
 <?php
 
-namespace MinecraftProject\JsonApiBundle\DependencyInjection;
+namespace GrailleLabs\JsonApiBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -40,6 +40,6 @@ class JsonApiExtension extends Extension
         if (!isset($config['servers']['default']))
             throw new \InvalidArgumentException('JsonAPIBundle - Vous devez spécifier un serveur par defaut dans app/config/config.yml');
 
-        $container->setParameter('gob.json_api.servers', $config['servers']);
+        $container->setParameter('glabs.json_api.servers', $config['servers']);
     }
 }

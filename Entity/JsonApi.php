@@ -1,5 +1,5 @@
 <?php
-namespace MinecraftProject\JsonApiBundle\Entity;
+namespace GrailleLabs\JsonApiBundle\Entity;
 
 /**
  * A PHP class for access Minecraft servers that have Bukkit with the {@link http://github.com/alecgorge/JSONAPI JSONAPI} plugin installed.
@@ -12,6 +12,7 @@ namespace MinecraftProject\JsonApiBundle\Entity;
  * @package JSONAPI
  * @since Alpha 5
  */
+
 class JsonApi
 {
 	private $host;

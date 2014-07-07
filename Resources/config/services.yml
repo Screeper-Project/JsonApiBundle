@@ -1,8 +1,8 @@
 parameters:
-  gob.json_api.servers: ~
+  glabs.json_api.servers: ~
 
 services:
     mp_jsonapi.api:
-        class: MinecraftProject\JsonApiBundle\Services\JsonApiService
+        class: GrailleLabs\JsonApiBundle\Services\JsonApiService
         arguments:
             - '@service_container'

@@ -1,6 +1,6 @@
 <?php
 
-namespace MinecraftProject\JsonApiBundle\Services;
+namespace GrailleLabs\JsonApiBundle\Services;
 
 use MinecraftProject\JsonApiBundle\Entity\JsonApi as JsonApiEntity;
 use Symfony\Component\DependencyInjection\ContainerInterface;

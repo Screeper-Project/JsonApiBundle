@@ -1,6 +1,6 @@
 <?php
 
-namespace MinecraftProject\JsonApiBundle\Tests\Controller;
+namespace GrailleLabs\JsonApiBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
