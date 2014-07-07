@@ -2,7 +2,7 @@
     "name": "graille-labs/jsonapi-bundle",
     "type": "library",
     "description": "Minecraft server control",
-    "keywords": ["minecraft","control"],
+    "keywords": ["minecraft","control","jsonapi","api","connection"],
     "homepage": "http://github.com/Graille",
     "license": "MIT",
     "authors": [

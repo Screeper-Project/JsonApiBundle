@@ -2,7 +2,7 @@ parameters:
   glabs.json_api.servers: ~
 
 services:
-    mp_jsonapi.api:
+    gl.jsonapi.api:
         class: GrailleLabs\JsonApiBundle\Services\JsonApiService
         arguments:
             - '@service_container'
