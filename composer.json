@@ -2,7 +2,7 @@
     "name": "graille-labs/jsonapi-bundle",
     "type": "library",
     "description": "Minecraft server control",
-    "keywords": ["minecraft","control","jsonapi","api","connection"],
+    "keywords": ["minecraft","control","jsonapi","api","connection","server management"],
     "homepage": "http://github.com/Graille",
     "license": "MIT",
     "authors": [
@@ -13,11 +13,11 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.3.0",
+        "symfony/framework-bundle": "~2.1"
     },
     "autoload": {
-        "psr-0": {
-            "JsonAPI": "src"
-        }
-    }
+        "psr-0": { "GrailleLabs\\JsonAPIBundle": "" }
+    },
+    "target-dir": "graille-labs/jsonapi-bundle"
 }
