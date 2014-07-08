@@ -50,6 +50,8 @@ class JsonApiService
 
                 foreach($server_config as $key => $sub_config) // On écrase les configurations copié par celles de l'utilisateur
                     $config[$key] = $server_config;
+
+                $server_config = $config; // Enfin on renvoi la nouvelle config
             }
             else
                 throw new \InvalidArgumentException('JsonAPIBundle - le serveur "'.$server_name.'" est mal configuré');
@@ -58,9 +60,9 @@ class JsonApiService
                 $server_config['port'] = 20059;
             if(!isset($server_config['salt']))
                 $server_config['salt'] = "";
-
-            return $server_config;
         }
+        
+        return $server_config;
     }
 
     public function getApi($server = 'default')
