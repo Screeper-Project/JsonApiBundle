@@ -1,5 +1,5 @@
 {
-    "name": "graille-labs/jsonapi-bundle",
+    "name": "GrailleLabs/JsonApiBundle",
     "type": "library",
     "description": "Minecraft server control",
     "keywords": ["minecraft","control","jsonapi","api","connection","server management"],
@@ -17,7 +17,7 @@
         "symfony/framework-bundle": "~2.1"
     },
     "autoload": {
-        "psr-0": { "GrailleLabs\\JsonAPIBundle": "" }
+        "psr-0": { "GrailleLabs\\JsonApiBundle": "" }
     },
-    "target-dir": "graille-labs/jsonapi-bundle"
+    "target-dir": "graille-labs/bundle"
 }
