@@ -2,7 +2,7 @@
 
 namespace GrailleLabs\JsonApiBundle\Services;
 
-use MinecraftProject\JsonApiBundle\Entity\JsonApi as JsonApiEntity;
+use GrailleLabs\JsonApiBundle\Entity\JsonApi as JsonApiEntity;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class JsonApiService
@@ -33,21 +33,28 @@ class JsonApiService
         $server_config = $servers_list[$server_name];
 
         if (!isset($server_config['login']) or
-            !isset($server_config['password']) or
-            !isset($server_config['ip']))
-            if (isset($server_config['pattern'])) // Si c'est un pattern
+          !isset($server_config['password']) or
+          !isset($server_config['ip']))
+            if (isset($server_config['pattern'])) { // Si c'est un pattern
                 $this->checkConfig($server_config['pattern'], $servers_list);
+                $config = $this->getConfig($server_config['pattern']);
+
+                foreach($server_config as $key => $sub_config) // On écrase les configurations copié par celles de l'utilisateur
+                    $config[$key] = $server_config;
+            }
             else
                 throw new \InvalidArgumentException('JsonAPIBundle - le serveur "'.$server_name.'" est mal configuré');
         else {
             if(!isset($server_config['port']))
                 $server_config['port'] = 20059;
+            if(!isset($server_config['salt']))
+                $server_config['salt'] = "";
 
             return $server_config;
         }
     }
 
-    public function getAPI($server = 'default')
+    public function getApi($server = 'default')
     {
         $config = $this->getConfig($server);
         $API = new JsonApiEntity($config['ip'], $config['port'], $config['login'], $config['password'], $config['salt']);

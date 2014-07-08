@@ -42,7 +42,10 @@ json_api:
             salt: ~
 ```
 
+N.B : Port and Salt are optionnal, the port by default is 20059
+
 If you need to copy a server, you can create a pattern :
+
 ```
 json_api:
     servers:
@@ -55,3 +58,34 @@ json_api:
             ip: #ip
             salt: ~
 ```
+
+You can erase the configuration of a pattern :
+```
+json_api:
+    servers:
+        default: ## The "default" server is required
+            pattern: serv1 ## Default server is "serv1"
+        serv1:
+            pattern: serv2
+            ip: #new_ip
+        serv2:
+            login: #username
+            password: #password
+            port: #port
+            ip: #ip
+            salt: ~
+```
+
+(In this example, the informations are the same, but the ip isn't.)
+
+Usage
+=============
+
+For use, you must call the service :
+
+```
+$api = $this->container->get('gl.jsonapi.api')->getApi("servername");
+```
+
+After that, you can use the api normally.
+If "servername" is empty, the default server will be used.
