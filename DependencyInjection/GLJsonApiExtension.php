@@ -19,11 +19,6 @@ class GlJsonApiExtension extends Extension
         foreach ($configs as $subConfig)
             $config = array_merge($config, $subConfig);
 
-        /*
-        $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs);
-        */
-
         // Importation des services
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
