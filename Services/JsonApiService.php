@@ -2,6 +2,15 @@
 
 namespace GrailleLabs\JsonApiBundle\Services;
 
+/**
+ * @author Graille
+ * @version 1.0.0
+ * @link http://github.com/Graille
+ * @package JSONAPIBUNDLE
+ * @since 1.0.0
+ */
+
+
 use GrailleLabs\JsonApiBundle\Entity\JsonApi as JsonApiEntity;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -14,7 +23,7 @@ class JsonApiService
         $this->container = $container;
     }
 
-    // Configuration des serveurs
+    // Récupération des serveurs
     protected function getServers()
     {
         return $this->container->getParameter('gob.json_api.servers');
@@ -24,7 +33,7 @@ class JsonApiService
         if (!isset($servers_list[$server]))
             throw new \InvalidArgumentException('JsonAPIBundle - le serveur "'.$server.'" ne possède aucune configuration dans app/config/config.yml');
     }
-    protected function getConfig($server_name)
+    protected function getConfig($server_name) // Récupération de la configuration d'un serveur
     {
         $servers_list = $this->getServers();
 

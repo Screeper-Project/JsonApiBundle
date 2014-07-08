@@ -30,6 +30,6 @@ class GlJsonApiExtension extends Extension
         if (!isset($config['servers']['default']))
             throw new \InvalidArgumentException('JsonAPIBundle - Vous devez spécifier un serveur par defaut dans app/config/config.yml');
 
-        $container->setParameter('glabs.json_api.servers', $config['servers']);
+        $container->setParameter('glabs.json_api.parameters.servers', $config['servers']);
     }
 }

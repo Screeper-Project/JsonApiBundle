@@ -1,8 +1,8 @@
 parameters:
-  glabs.json_api.servers: ~
+  glabs.json_api.parameters.servers: ~
 
 services:
-    gl.jsonapi.api:
+    glabs.json_api.services.api:
         class: GrailleLabs\JsonApiBundle\Services\JsonApiService
         arguments:
             - '@service_container'

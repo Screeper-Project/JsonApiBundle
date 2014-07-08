@@ -70,14 +70,14 @@ gl_json_api:
         default: ## The "default" server is required
             pattern: serv1 ## Default server is "serv1"
         serv1:
-            pattern: serv2
-            ip: #new_ip
-        serv2:
             login: #username
             password: #password
             port: #port
             ip: #ip
             salt: ~
+        serv2:
+            pattern: serv1
+            ip: #new_ip
 ```
 
 (In this example, the informations are the same, but the ip isn't.)
@@ -88,7 +88,7 @@ Usage
 For use, you must call the service :
 
 ```
-$api = $this->container->get('gl.jsonapi.api')->getApi("servername");
+$api = $this->container->get('glabs.json_api.services.api')->getApi("servername");
 ```
 
 After that, you can use the api normally.
