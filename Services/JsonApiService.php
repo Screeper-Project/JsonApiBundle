@@ -26,7 +26,7 @@ class JsonApiService
     // Récupération des serveurs
     protected function getServers()
     {
-        return $this->container->getParameter('gob.json_api.servers');
+        return $this->container->getParameter('glabs.json_api.servers');
     }
     protected function checkConfig($server, $servers_list)
     {

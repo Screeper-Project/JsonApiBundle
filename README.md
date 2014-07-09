@@ -22,7 +22,7 @@ Configuration
 In the app/config/config.yml :
 
 ```
-glabs_json_api:
+graille_labs_json_api:
     servers:
 		## Your servers
 ```
@@ -30,7 +30,7 @@ glabs_json_api:
 You can add many servers :
 
 ```
-glabs_json_api:
+graille_labs_json_api:
     servers:
         default: ## The "default" server is required
             login: #username
@@ -51,7 +51,7 @@ N.B : Port and Salt are optionnal, the port by default is 20059
 If you need to copy a server, you can create a pattern :
 
 ```
-glabs_json_api:
+graille_labs_json_api:
     servers:
         default: ## The "default" server is required
             pattern: serv1 ## Default server is "serv1"
@@ -65,7 +65,7 @@ glabs_json_api:
 
 You can erase the configuration of a pattern :
 ```
-glabs_json_api:
+graille_labs_json_api:
     servers:
         default: ## The "default" server is required
             pattern: serv1 ## Default server is "serv1"

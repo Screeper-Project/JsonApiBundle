@@ -4,7 +4,7 @@
     "description": "JsonApi support in Symfony 2",
     "keywords": ["minecraft","control","jsonapi","api","server management"],
     "homepage": "http://github.com/Graille",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "authors": [
         {
