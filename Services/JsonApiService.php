@@ -61,7 +61,7 @@ class JsonApiService
             if(!isset($server_config['salt']))
                 $server_config['salt'] = "";
         }
-        
+
         return $server_config;
     }
 
