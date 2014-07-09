@@ -1,7 +1,7 @@
 Graille-Labs JsonApi bundle
 =====================
 
-The JsonApi bundle add support of JsonApi (plugin of alecgorge) in symfony 2.
+The JsonApi bundle add support of JsonApi (alecgorge's plugin) in symfony 2.
 
 The github of JsonApi : https://github.com/alecgorge/jsonapi
 

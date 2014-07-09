@@ -18,6 +18,9 @@ class JsonApiService
 {
     protected $container;
 
+    // Constantes
+    const SERVERS_PARAMETER_NAME = 'glabs.json_api.parameters.servers';
+
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
@@ -26,7 +29,7 @@ class JsonApiService
     // Récupération des serveurs
     protected function getServers()
     {
-        return $this->container->getParameter('glabs.json_api.servers');
+        return $this->container->getParameter(JsonApiService::SERVERS_PARAMETER_NAME);
     }
     protected function checkConfig($server, $servers_list)
     {
