@@ -7,7 +7,7 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
-class GlabsJsonApiExtension extends Extension
+class GrailleLabsJsonApiExtension extends Extension
 {
     /**
      * {@inheritDoc}

@@ -8,7 +8,7 @@ The github of JsonApi : https://github.com/alecgorge/jsonapi
 The webpage of JsonApi : Not available
 
 Installation
-============
+------------
 Add :
 
 ```
@@ -18,7 +18,7 @@ Add :
 in your composer.json
 
 Configuration
-=============
+------------
 In the app/config/config.yml :
 
 ```
@@ -83,7 +83,7 @@ glabs_json_api:
 (In this example, the informations are the same, but the ip isn't.)
 
 Usage
-=============
+------------
 
 For use, you must call the service :
 
