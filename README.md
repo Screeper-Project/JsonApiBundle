@@ -1,5 +1,6 @@
 Graille-Labs JsonApi bundle
 =====================
+**NOT AVAILABLE**
 
 The JsonApi bundle add support of JsonApi (alecgorge's plugin) in symfony 2.
 
@@ -12,75 +13,16 @@ Installation
 Add :
 
 ```
-"graille-labs/jsonapi-bundle": "dev-master"
+"graille-labs/screeper/jsonapi-bundle": "dev-master"
 ```
 
 in your composer.json
 
 Configuration
 ------------
-In the app/config/config.yml :
+You must configure servers in the ServerBundle :
 
-```
-graille_labs_json_api:
-    servers:
-		## Your servers
-```
-
-You can add many servers :
-
-```
-graille_labs_json_api:
-    servers:
-        default: ## The "default" server is required
-            login: #username
-            password: #password
-            port: #port
-            ip: #ip
-            salt: ~
-        serv1:
-            login: #username
-            password: #password
-            port: #port
-            ip: #ip
-            salt: ~
-```
-
-N.B : Port and Salt are optionnal, the port by default is 20059
-
-If you need to copy a server, you can create a pattern :
-
-```
-graille_labs_json_api:
-    servers:
-        default: ## The "default" server is required
-            pattern: serv1 ## Default server is "serv1"
-        serv1:
-            login: #username
-            password: #password
-            port: #port
-            ip: #ip
-            salt: ~
-```
-
-You can erase the configuration of a pattern :
-```
-graille_labs_json_api:
-    servers:
-        default: ## The "default" server is required
-            pattern: serv1 ## Default server is "serv1"
-        serv1:
-            login: #username
-            password: #password
-            port: #port
-            ip: #ip
-            salt: ~
-        serv2:
-            pattern: serv1
-            ip: #new_ip
-```
-
-(In this example, the informations are the same, but the ip isn't.)
+ServerBundle Page : https://github.com/graille/ServerBundle
 
 Usage
 ------------
@@ -88,8 +30,8 @@ Usage
 For use, you must call the service :
 
 ```
-$api = $this->container->get('glabs.json_api.services.api')->getApi("servername");
+$api = $this->container->get('screeper.json_api.services.api')->getApi("servername");
 ```
 
 After that, you can use the api normally.
-If "servername" is empty, the default server will be used.
+If "servername" is empty, the default server will be used (For more informations, go to the [ServerBundle](https://github.com/graille/ServerBundle) page).
