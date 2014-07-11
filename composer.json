@@ -1,5 +1,5 @@
 {
-    "name": "graille-labs/screeper/jsonapi-bundle",
+    "name": "graille-labs/screeper-jsonapi-bundle",
     "type": "symfony-bundle",
     "description": "JsonApi support in Symfony 2",
     "keywords": ["minecraft","control","jsonapi","api","server management"],
@@ -18,7 +18,7 @@
         "symfony/framework-bundle": ">=2.1",
         "twig/twig": "*",
         "doctrine/doctrine-bundle": "*",
-        "graille-labs/screeper/server-bundle": "dev-master"
+        "graille-labs/screeper-server-bundle": "dev-master"
     },
     "autoload": {
         "psr-0": { "Screeper\\JsonApiBundle": "" }
