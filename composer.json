@@ -23,6 +23,6 @@
     "autoload": {
         "psr-0": { "Screeper\\JsonApiBundle": "" }
     },
-    "target-dir": "GrailleLabs/Screeper/JsonApiBundle",
+    "target-dir": "GrailleLabs/JsonApiBundle",
     "minimum-stability": "dev"
 }
