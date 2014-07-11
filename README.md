@@ -1,4 +1,4 @@
-Graille-Labs JsonApi bundle
+Graille-Labs - Screeper Project - JsonApi bundle
 =====================
 **NOT AVAILABLE**
 

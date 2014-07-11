@@ -18,7 +18,7 @@
         "symfony/framework-bundle": ">=2.1",
         "twig/twig": "*",
         "doctrine/doctrine-bundle": "*",
-        "graille-labs/screeper/server-bundle": "dev-master" // On rajoute la dépendance au bundle serveur
+        "graille-labs/screeper/server-bundle": "dev-master"
     },
     "autoload": {
         "psr-0": { "Screeper\\JsonApiBundle": "" }
