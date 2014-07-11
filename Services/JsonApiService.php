@@ -12,6 +12,7 @@ namespace Screeper\JsonApiBundle\Services;
 
 use Screeper\JsonApiBundle\Model\JsonApi as JsonApiEntity;
 use Screeper\ServerBundle\Entity\Server as ServerEntity;
+use Screeper\ServerBundle\Services\ServerService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class JsonApiService
