@@ -15,7 +15,7 @@ Installation
 Add :
 
 ```
-"graille-labs/screeper/jsonapi-bundle": "dev-master"
+"graille-labs/screeper-jsonapi-bundle": "dev-master"
 ```
 
 in your composer.json
