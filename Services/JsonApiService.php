@@ -35,7 +35,7 @@ class JsonApiService
     protected function getServer($server_name)
     {
         return $this->container
-            ->get('screeper.server.services.servers')
+            ->get('screeper.server.services.server')
             ->getServer($server_name);
     }
 
