@@ -126,6 +126,16 @@ class JsonApiService
     }
 
     /**
+     * @param $message
+     * @param string $name
+     * @param string $server_name
+     */
+    public function writeMessage($message, $name = 'Server', $server_name = ServerService::DEFAULT_SERVER_NAME)
+    {
+        //$this->call('runConsoleCommand', array('say '.$message), $server_name);
+        $this->call('chat.with_name', array($message, $name));
+    }
+    /**
      * @param $server_name
      * @return bool
      */
