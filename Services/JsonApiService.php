@@ -122,7 +122,16 @@ class JsonApiService
      */
     public function gradeUser($user, $grade, $server_name = ServerService::DEFAULT_SERVER_NAME)
     {
-        $this->call('runConsoleCommand', array('pex user '.$user.' group set '.$grade), $server_name);
+        $this->executeCommand('pex user '.$user.' group set '.$grade, $server_name);
+    }
+
+    /**
+     * @param $command
+     * @param $server_name
+     */
+    public function executeCommand($command, $server_name = ServerService::DEFAULT_SERVER_NAME)
+    {
+        $this->call('runConsoleCommand', array($command), $server_name);
     }
 
     /**
@@ -135,6 +144,7 @@ class JsonApiService
         //$this->call('runConsoleCommand', array('say '.$message), $server_name);
         $this->call('chat.with_name', array($message, $name));
     }
+
     /**
      * @param $server_name
      * @return bool
@@ -143,6 +153,6 @@ class JsonApiService
     {
         $maxPlayers = $this->callResult("getPlayerLimit", array(), $server_name); // La variable maxJoueurs correspond au nombre de slots
 
-        return ($maxPlayers == 0 ) ? false : true;
+        return ($maxPlayers == 0) ? false : true;
     }
 }
