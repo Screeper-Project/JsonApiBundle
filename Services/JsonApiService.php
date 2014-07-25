@@ -43,16 +43,16 @@ class JsonApiService
      * @param string $server_name
      * @return JsonApiEntity
      */
-    public function getApi($server_name = ServerService::DEFAULT_SERVER_NAME)
+    public function getApi($server_name = ServerService::DEFAULT_SERVER_KEY)
     {
         $server = $this->getServer($server_name);
 
         $API = new JsonApiEntity(
-            $server->getConfigIp(),
-            $server->getConfigPort(),
-            $server->getConfigLogin(),
-            $server->getConfigPassword(),
-            $server->getConfigSalt());
+            $server->getIp(),
+            $server->getPort(),
+            $server->getLogin(),
+            $server->getPwd(),
+            $server->getSalt());
 
         return $API;
     }
@@ -64,7 +64,7 @@ class JsonApiService
      * @param $server
      * @return array
      */
-    public function call($command, array $options = array(), $server = ServerService::DEFAULT_SERVER_NAME)
+    public function call($command, array $options = array(), $server = ServerService::DEFAULT_SERVER_KEY)
     {
         $result = $this->getApi($server)->call($command, $options);
 
@@ -77,7 +77,7 @@ class JsonApiService
      * @param $server
      * @return array
      */
-    public function callResult($command, array $options = array(), $server = ServerService::DEFAULT_SERVER_NAME) // Un call suivie d'un verif
+    public function callResult($command, array $options = array(), $server = ServerService::DEFAULT_SERVER_KEY) // Un call suivie d'un verif
     {
         $result = $this->call($command, $options, $server);
 
@@ -100,7 +100,7 @@ class JsonApiService
      * @param $server
      * @return array
      */
-    public function getPlayersOnline($server = ServerService::DEFAULT_SERVER_NAME)
+    public function getPlayersOnline($server = ServerService::DEFAULT_SERVER_KEY)
     {
         return $this->callResult('players.online', array(), $server);
     }
@@ -110,7 +110,7 @@ class JsonApiService
      * @param $server_name
      * @return array
      */
-    public function getGroups($player, $server_name = ServerService::DEFAULT_SERVER_NAME)
+    public function getGroups($player, $server_name = ServerService::DEFAULT_SERVER_KEY)
     {
         return $this->callResult('permissions.getGroups', array($player), $server_name);
     }
@@ -120,7 +120,7 @@ class JsonApiService
      * @param $grade
      * @param $server_name
      */
-    public function gradeUser($user, $grade, $server_name = ServerService::DEFAULT_SERVER_NAME)
+    public function gradeUser($user, $grade, $server_name = ServerService::DEFAULT_SERVER_KEY)
     {
         $this->executeCommand('pex user '.$user.' group set '.$grade, $server_name);
     }
@@ -129,7 +129,7 @@ class JsonApiService
      * @param $command
      * @param $server_name
      */
-    public function executeCommand($command, $server_name = ServerService::DEFAULT_SERVER_NAME)
+    public function executeCommand($command, $server_name = ServerService::DEFAULT_SERVER_KEY)
     {
         $this->call('runConsoleCommand', array($command), $server_name);
     }
@@ -139,7 +139,7 @@ class JsonApiService
      * @param string $name
      * @param string $server_name
      */
-    public function writeMessage($message, $name = 'Server', $server_name = ServerService::DEFAULT_SERVER_NAME)
+    public function writeMessage($message, $name = 'Server', $server_name = ServerService::DEFAULT_SERVER_KEY)
     {
         //$this->call('runConsoleCommand', array('say '.$message), $server_name);
         $this->call('chat.with_name', array($message, $name));
@@ -149,10 +149,11 @@ class JsonApiService
      * @param $server_name
      * @return bool
      */
-    public function getServerStatus($server_name = ServerService::DEFAULT_SERVER_NAME)
+    public function getServerStatus($server_name = ServerService::DEFAULT_SERVER_KEY)
     {
         $maxPlayers = $this->callResult("getPlayerLimit", array(), $server_name); // La variable maxJoueurs correspond au nombre de slots
 
-        return ($maxPlayers == 0) ? false : true;
+        //return ($maxPlayers == 0) ? false : true;
+        return $maxPlayers;
     }
 }
